@@ -24,17 +24,19 @@ public class PersonGenerator {
         String firstName = "";
         String lastName = "";
         String title = "";
-        int yearOfBirth = 0;
+        int YOB = 0;
 
         do {
             ID = SafeInput.getNonZeroLenString(in,"Enter the ID [6 digits]: ");
             firstName = SafeInput.getNonZeroLenString(in,"Enter the First Name: ");
             lastName = SafeInput.getNonZeroLenString(in,"Enter the Last Name: ");
             title = SafeInput.getNonZeroLenString(in,"Enter the Title: ");
-            yearOfBirth = SafeInput.getRangedInt(in, "Enter the Year of Birth", 1000, 9999);
+            YOB = SafeInput.getRangedInt(in, "Enter the Year of Birth", 1000, 9999);
 
-            personRec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + yearOfBirth;
+            personRec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
             people.add(personRec);
+
+
 
             done = SafeInput.getYNConfirm(in, "Are you done?");
         } while(!done);
@@ -51,13 +53,15 @@ public class PersonGenerator {
             for (String rec : people){
                 writer.write(rec, 0, rec.length());
                 writer.newLine();
-            }
+                }
             writer.close();
             System.out.println("Data file written!");
         }
         catch (IOException e){
             e.printStackTrace();;
         }
+
+
 
     }
 }

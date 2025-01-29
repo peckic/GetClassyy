@@ -19,7 +19,6 @@ public class ProductWriter {
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\ProductTestData.txt");
 
         boolean done = false;
-        String productRec = "";
 
         String ID = "";
         String name = "";
@@ -32,7 +31,7 @@ public class ProductWriter {
             description = SafeInput.getNonZeroLenString(in,"Enter the description: ");
             cost = SafeInput.getDouble(in, "Enter the cost");
 
-            productRec = ID + ", " + name + ", " + description + ", " + cost;
+            String productRec = String.format( "%s, %s, %s, %,2f", ID, name, description, cost);
             products.add(productRec);
 
             done = SafeInput.getYNConfirm(in, "Are you done?");

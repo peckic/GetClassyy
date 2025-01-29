@@ -16,5 +16,7 @@ public class PersonTest
         System.out.println(sally.getAge());
         System.out.println(sally.getAgeSpecific(2012));
         System.out.println(sally.toCSV());
+        System.out.println(sally.toJSON());
+        System.out.println(sally.toXML());
     }
 }

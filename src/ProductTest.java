@@ -10,7 +10,8 @@ public class ProductTest {
         cheese.setCost(4.99);
         System.out.println(cheese.getCost());
         System.out.println(cheese.toCSV());
-
+        System.out.println(cheese.toJSON());
+        System.out.println(cheese.toXML());
     }
 
 }

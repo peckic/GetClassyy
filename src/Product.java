@@ -57,5 +57,14 @@ public class Product
     public String toCSV() {
         return name + " , " + description + " , " + ID + " , " + cost;
     }
+    public String toJSON(){
+        return "ID Number: " + ID +
+                "name: " + name +
+                "description: " + description +
+                "cost: " + cost;
+    }
+    public String toXML(){
+        return ID + name + description + cost;
+    }
 
 }

@@ -85,5 +85,15 @@ public class Person
         return ID + "," + firstName + "," + lastName + "," +  title + "," + YOB;
     }
 
+    public String toJSON(){
+        return "ID Number: " + ID +
+                "first name: " + firstName +
+                "last name: " + lastName +
+                "title: " + title +
+                "Year of Birth: " + YOB;
+    }
+    public String toXML(){
+       return ID + firstName + lastName + title + YOB;
+    }
 
 }

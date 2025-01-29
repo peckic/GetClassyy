@@ -19,7 +19,6 @@ public class PersonGenerator {
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\PersonTestData.txt");
 
         boolean done = false;
-        String personRec = "";
         String ID = "";
         String firstName = "";
         String lastName = "";
@@ -33,10 +32,8 @@ public class PersonGenerator {
             title = SafeInput.getNonZeroLenString(in,"Enter the Title: ");
             YOB = SafeInput.getRangedInt(in, "Enter the Year of Birth", 1000, 9999);
 
-            personRec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
+            String personRec = String.format("%s, %s, %s, %s, %d",  ID, firstName, lastName, title, YOB);
             people.add(personRec);
-
-
 
             done = SafeInput.getYNConfirm(in, "Are you done?");
         } while(!done);
@@ -55,7 +52,7 @@ public class PersonGenerator {
                 writer.newLine();
                 }
             writer.close();
-            System.out.println("Data file written!");
+            System.out.println("Data file written!" + file.toString());
         }
         catch (IOException e){
             e.printStackTrace();;
